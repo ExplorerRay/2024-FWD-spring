@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>I am 110550123</title>
+	<style>
+		body {
+			background-color: lightpink;
+		}
+
+		h1 {
+			background-color: lightgreen;
+		}
+
+		img {
+			width: 35px; height: auto; float: left;
+		}
+
+		legend {
+			color: red;
+		}
+		footer {
+			display: block; 
+			clear: both; 
+			text-align:left;
+			background: linear-gradient(to left, lightgreen, yellow)
+		} 
+	</style>
+</head>
+
+<body>
+	<h1>
+		<img src="110550123_黃柏竣.jpg">
+		<div>個人小檔案(表單版_Form)_Hw#2-P1</div>
+	</h1>
+
+	<section>
+		<form method="post", action="mailto:rayhuang.cs10@nycu.edu.tw">
+			<fieldset>
+				<legend>個人基本資料</legend>
+					<label for="Fname">姓名:</label>
+					<input type="text" id="Fname" name="fst_name"><br><br>
+					<label for="studentID">學號:</label>
+					<input type="text" id="studentID" name="stud_id"><br><br>
+
+					年級:
+					<input type="radio" id="yearcho1" name="year" value="大一">
+					<label for="yearcho1">大一</label>
+					<input type="radio" id="yearcho2" name="year" value="大二">
+					<label for="yearcho2">大二</label>
+					<input type="radio" id="yearcho3" name="year" value="大三" checked>
+					<label for="yearcho3">大三</label>
+					<input type="radio" id="yearcho4" name="year" value="大四">
+					<label for="yearcho4">大四</label>
+					<input type="radio" id="yearcho5" name="year" value="延畢">
+					<label for="yearcho5">延畢</label>
+					<input type="radio" id="yearcho6" name="year" value="研究生">
+					<label for="yearcho6">研究所以上</label>
+			</fieldset>
+		<hr>
+			<fieldset>
+				<legend>其他資訊</legend>
+				<ol>
+					<div>
+						<li>
+						興趣(愛好)--平時休閒時，你喜歡下列哪些活動(可複選)? <br>
+						<input type="checkbox" id="hobby1" name="hobby" value="閱讀">
+						<label for="hobby1">看書</label>
+						<input type="checkbox" id="hobby2" name="hobby" value="打球" checked>
+						<label for="hobby2">打球</label>
+						<input type="checkbox" id="hobby3" name="hobby" value="聽音樂">
+						<label for="hobby3">聽音樂</label>
+						<input type="checkbox" id="hobby4" name="hobby" value="玩遊戲">
+						<label for="hobby4">玩遊戲</label>
+						</li>
+					</div><br>
+					<div>
+						<li>
+						系統工具--本學期的幾次作業，你使用哪些瀏覽器(可複選)? <br>
+						<label for="browsers"></label>
+						<select name="browsers" id="browsers" size="3" multiple>
+							<option value="chrome">Chrome</option>
+							<option value="firefox">Firefox</option>
+							<option value="ie">Internet Explorer</option>
+							<option value="safari">Safari</option>
+							<option value="edge" selected>Edge</option>
+						</select>
+						</li>
+					</div><br>
+					<div>
+						<li>遭遇問題--有關進行中的學期專案，簡單描述遇到哪些問題? <br>
+						<textarea name="message" rows="5" cols="40">
+1. 找隊友不知該如何是好
+2. 對於要做甚麼還沒甚麼方向
+						</textarea>
+						</li>
+					</div><br>
+					<div>
+						<li>
+						<label for="oktime">本次作業，你的繳交時間:</label>
+						<input type="datetime-local" id="oktime" name="oktime"><br>
+						</li>
+					</div>
+				</ol>
+			</fieldset>
+			<input type="submit" value="提交">
+			<input type="reset" value="重新輸入"><br>
+			<!-- <button type="reset" onclick="resetForm()">重新輸入</button><br><br> -->
+		</form>
+		<button onclick="history.back()" style="color: red">回到前頁(Back to previous page)</button>
+	</section>
+	<hr>
+
+	<footer>
+		<p>Hw#2_摘要資訊 (Summary infomation of Hw#2)</p>
+		<p>
+			<ul>
+				<li>內容: P1_HTML_Form + P2_HTML_Table</li>
+				<li>繳交期限: 2024.4.7</li>
+			</ul>
+		</p>
+	</footer>
+
+	<!-- <script>
+		function resetForm() {
+			var forms = document.getElementsByTagName("form");
+			for(var i = 0; i < forms.length; i++) {
+				forms[i].reset();
+			}
+		}
+	</script> -->
+</body>
+</html>

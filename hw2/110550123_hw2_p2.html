@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>I am 110550123</title>
+	<style>
+		body {
+			background-color: lightpink;
+		}
+		h1 {
+			background-color: lightgreen;
+			text-align: center;
+		}
+		caption {
+			color: blue;
+			font-weight: bold;
+		}
+		table, th, td {
+			border: 1px solid black;
+			text-align: center;
+		}
+		table {
+			width: 100%;
+		}
+		th {
+			background-color: yellow;
+		}
+		button {
+			color: red;
+		}
+		footer {
+			display: block; 
+			clear: both; 
+			text-align:left;
+			background: linear-gradient(to left, lightgreen, yellow)
+		} 
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>學生專案團隊檔案(表格_Table)_Hw#2-P2</h1>
+	</header>
+
+	<main>
+		<section>
+		<table>
+			<caption>表1:學期專案團隊資訊</caption>
+			<thead>
+				<tr>
+					<th>姓名(Name)</th>
+					<th>學號(Student ID)</th>
+					<th>信箱(Email)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="background: aqua;">
+					<td>黃柏竣</td>
+					<td>110550123</td>
+					<td>rayhuang.cs10@nycu.edu.tw</td>
+				</tr>
+				<tr style="background: rgb(234, 101, 61);">
+					<td>未確定</td>
+					<td>xxxxxxxxx</td>
+					<td>xxxxxxxxx@nycu.edu.tw</td>
+				</tr>
+				<tr style="background: lightgreen;">
+					<td>未確定</td>
+					<td>xxxxxxxxx</td>
+					<td>xxxxxxxxx@nycu.edu.tw</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		</section>
+
+		<section>
+		<table>
+			<caption>表2:學期專案團隊資訊(使用colgroup)</caption>
+			<colgroup>
+				<col style="background-color: aqua;">
+				<col style="background-color: rgb(234, 101, 61);">
+				<col style="background-color: lightgreen;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>姓名(Name)</th>
+					<th>學號(Student ID)</th>
+					<th>信箱(Email)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>黃柏竣</td>
+					<td>110550123</td>
+					<td>rayhuang.cs10@nycu.edu.tw</td>
+				</tr>
+				<tr>
+					<td>未確定</td>
+					<td>xxxxxxxxx</td>
+					<td>xxxxxxxxx@nycu.edu.tw</td>
+				</tr>
+				<tr>
+					<td>未確定</td>
+					<td>xxxxxxxxx</td>
+					<td>xxxxxxxxx@nycu.edu.tw</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		</section><hr>
+		
+		<section>
+		<form>
+			<ul>
+				<li>
+				<label for="oktime">表格製作時間:</label>
+				<input type="date" id="tbtime" name="tbtime">
+				</li>
+			</ul>
+		</form>
+		<button onclick="history.back()">回到前頁(Back to previous page)</button>
+		<hr>
+		</section>
+	</main>
+
+	<footer>
+		<p>Hw#2_摘要資訊 (Summary infomation of Hw#2)</p>
+		<p>
+			<ul>
+				<li>內容: P1_HTML_Form + P2_HTML_Table</li>
+				<li>繳交期限: 2024.4.7</li>
+			</ul>
+		</p>
+	</footer>
+</body>
+
+</html>
