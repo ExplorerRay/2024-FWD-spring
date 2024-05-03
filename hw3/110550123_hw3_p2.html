@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I am 110550123</title>
+  <link rel="stylesheet" type="text/css" href="110550123_hw3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    // show table
+    $(document).ready(function(){
+      $("#stp1").click(function(){
+        $(".memberTable").show();
+        $("#stp1").hide();
+      });
+    });
+
+    // add member to table
+    $(document).ready(function(){
+      $("#stp2").click(function(){
+        var str = "";
+        str += "<tr>";
+        str += "<td>" + $('#name').val() + "</td>";
+        str += "<td>" + $('#stuid').val() + "</td>";
+        str += "<td>" + $('#email').val() + "</td>";
+        str += "</tr>";
+        
+        $('#tbdy').append(str);
+        // reset value of input
+        $('#name').val('');
+        $('#stuid').val('');
+        $('#email').val('');
+
+        // check table size
+        var tsize = $('#tbdy tr').length;
+        if (tsize == 3){
+          $("h1").css("color", "blue");
+          $("table").css("border", "1px solid blue");
+          $("th").css("border", "1px solid blue");
+          $("td").css("border", "1px solid blue");
+
+          // show finish message
+          $(".fin").show();
+          $("#stp2").hide();
+          $("#reset").hide();
+        }
+      });
+    });
+
+    // reset table
+    $(document).ready(function(){
+      $("#reset").click(function(){
+        $('#name').val('');
+        $('#stuid').val('');
+        $('#email').val('');
+
+        // remove all rows
+        $('#tbdy').empty();
+      });
+    });
+
+    // change table style (CSS1)
+    $(document).ready(function(){
+      $("#css1").click(function(){
+        $("tr:even").css("background-color", "pink");
+        $("tr:odd").css("background-color", "white");
+        $("caption").text("Table 1: 團隊成員資訊(CSS1)");
+      });
+    });
+
+    // change table style (CSS2 colgroup)
+    $(document).ready(function(){
+      $("#css2").click(function(){
+        $("tr").css("background-color", "");
+
+        if ($("colgroup").length == 0) {
+          cg_style = "<colgroup>\
+            <col style='background-color:orange'>\
+            <col span='2' style='background-color:lightblue'>\
+            </colgroup>";
+          $("table").find("tbody").before(cg_style);
+        }
+        $("caption").text("Table 1: 團隊成員資訊(CSS2_colgroup)");
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="110550123_黃柏竣.jpg" title="selfie">
+    <h1>使用JavaScript + jQuery 製作互動表格 (Hw#03-P2)</h1>
+  </header>
+  <main>
+    <p>
+      <details>
+        <summary>Hw3_P2 建立互動表格 (Interactive Table)</summary>
+        <ol>
+          <li>Step 1 - Collect the information of the members of your project team and enter them into Table 1.</li>
+          <li>Step 2 - Show the content of the table with different styles.</li>
+          <ul>
+            <li>CSS1: without colgroup</li>
+            <li>CSS2: with colgroup</li>
+          </ul>
+        </ol>
+      </details>
+    </p><hr>
+    <p>
+      <button type="button" id="stp1">Click Me (Step 1 - Build an interactive table)</button>
+      <div class="memberTable">
+        <h1>Step 1 - Build an interactive table</h1>
+        <div>請填寫以下欄位資訊後，點選新增成員</div>
+        <ol>
+          <li>
+            <label>姓名: 
+              <input type="text" id="name">
+            </label>
+          </li>
+          <li>
+            <label>學號: 
+              <input type="text" id="stuid">
+            </label>
+          </li>
+          <li>
+            <label>e-mail: 
+              <input type="text" id="email" size="30">
+            </label>
+          </li>
+        </ol>
+        <button type="button" id="reset">重置 (Reset)</button>
+        <button type="button" id="stp2">新增成員 (Add member)</button>
+        <table>
+          <caption>Table 1: 團隊成員資訊 </caption>
+          <thead>
+            <tr>
+              <th><bold>姓名</bold></th>
+              <th><bold>學號</bold></th>
+              <th><bold>e-mail</bold></th>
+            </tr>
+          </thead>
+          <tbody id="tbdy"></tbody>
+        </table>
+      </div>
+      <div class="fin">所有成員的資訊皆輸入完成</div>
+    </p><hr class="fin">
+    <p>
+      <div class="fin">
+        <h1>Step 2 - 更改表格風格設定</h1>
+        <button type="button" id="css1">CSS1 (橫列顏色相同)</button>
+        <button type="button" id="css2">CSS2 (直行顏色相同)</button>
+      </div>
+    </p>
+  </main>
+</body>
+</html>

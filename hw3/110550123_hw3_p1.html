@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I am 110550123</title>
+  <link rel="stylesheet" type="text/css" href="110550123_hw3.css">
+  <script src="110550123_hw3_P1.js"></script>
+</head>
+<body>
+  <header>
+    <img src="110550123_黃柏竣.jpg" title="selfie">
+    <h1>JavaScript 小遊戲 (Hw#03-P1)</h1>
+  </header>
+  <main>
+    <p>
+      <details>
+        <summary id="sum">猜數字(Number Guessing Game)</summary>
+        <ul>
+          <li>Step 1 (Random Number Generation) - First, the JS program will generate a pseudo-random integer number in the range [0.9]. </li>
+          <li>Step 2 (Number Guessing) - Next, the JS program will prompt you to try guessing the random number at most 5 times.</li>
+          <li>Step 3 (Summary Report) - Finally, the JS program will display the result.</li>
+        </ul>
+      </details>
+    </p><hr>
+    <p>
+      <button type="button" id="st_btn" onclick="start_game()">Start Game</button>
+      <div class="game">
+        <h2>Step 1 - pseudo-random number generation</h1>
+        <p>
+          The pseudo-random number is: <span id="rd_num">X</span>
+        </p>
+      <hr></div>
+    </p>
+    <p>
+      <div class="game">
+        <h2>Step 2 - Your guess (at most 5 times): </h1>
+        <p id="gus">
+          <label>Your guess number is (please input an integer in [0, 9]):
+            <input type="number" id="guess">
+          </label>
+          <button type="button" onclick="guessing()">Submit your guess</button>
+        </p>
+        
+        <ul id="rcd"></ul>
+      <hr></div>
+    </p>
+    <p>
+      <div class="fin">
+        <h2>Step 3 - Result: </h1> 
+        <p id="result"></p>
+      </div>
+    </p>
+
+  </main>
+  <footer class="fin">
+		<p id="ft_p">摘要資訊 (Summary infomation)</p>
+		<p>
+			<ul>
+				<li>內容: P1_JavaScript game + P2_JavaScript_Table</li>
+				<li>繳交期限: 2024.5.10</li>
+			</ul>
+		</p>
+  </footer>
+</body>
+</html>
