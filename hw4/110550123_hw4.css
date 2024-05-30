@@ -1,0 +1,45 @@
+body {
+  background-color: lightpink;
+}
+
+h1 {
+  background-color: lightgreen;
+}
+
+form {
+  border: dashed black 1px;
+  width: 200px;
+  padding: 20px;
+}
+
+img {
+  width: 35px;
+  height: auto;
+  float: left;
+}
+
+footer {
+  display: block;
+  clear: both;
+  text-align: left;
+  background: linear-gradient(to left, lightgreen, yellow)
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+}
+
+th {
+  background-color: yellow;
+  text-emphasis: bold;
+}
+
+#ft_p {
+  color: blue;
+}
+
+.fin, .memberTable, .game, #stp2 {
+  display: none;
+}

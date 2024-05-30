@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="110550123_hw4.css">
+  <title>Hw4_P2_110550123</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      // $.ajaxsetup({ cache: false });
+
+      $("#start").click(function(){
+        $("#start").hide();
+
+        $.get("110550123_hw4_P2.json", function(data){
+          $.each(data["myTeam"], function(key, value){
+            $("#tbdy").append("<tr>");
+            $.each(value, function(k,v){
+              $("#tbdy").append("<td>" + v + "</td>");
+            });
+            $("#tbdy").append("</tr>");
+          });
+        });
+
+        $("#stp2").show();
+      });
+    })
+  </script>
+</head>
+<body>
+  <header>
+    <img src="110550123_黃柏竣.jpg" title="selfie">
+    <h1>使用 jQuery + AJAX + JSON 取得團隊資訊 (Hw#04-P2)</h1>
+  </header>
+  <main>
+    <div>
+      <button type="button" id="start">Step1: Get JSON content (myTeam) </button>
+    </div>
+    <div id="json"></div>
+    <div id="stp2">
+      <h2>Step2: 用回傳 JSON 建立表格</h2>
+      <table>
+        <caption>Table 1 - Member info of the team </caption>
+        <thead>
+          <tr>
+            <th><bold>姓名</bold></th>
+            <th><bold>學號</bold></th>
+            <th><bold>e-mail address</bold></th>
+          </tr>
+        </thead>
+        <tbody id="tbdy">
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>

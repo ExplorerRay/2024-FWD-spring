@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hw4_P1_110550123</title>
+  <link rel="stylesheet" type="text/css" href="110550123_hw4.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"> </script>
+</head>
+<body>
+  <header>
+    <img src="110550123_黃柏竣.jpg" title="selfie">
+    <h1>使用 Vue + JS + 製作互動清單列表 (Hw#04-P1)</h1>
+  </header>
+  <main>
+    <div id="page">
+      <div>
+        <details>
+          <summary id="mb_ls">透過 Vue 建立學期專案團隊成員清單</summary>
+          <p>
+            Use Vue to create a member list of project team.
+            And there has been one member in the team.
+          </p>
+        </details>
+        <button v-on:click="ShowBTN = !ShowBTN" v-if="ShowBTN">
+          <strong>Click Me</strong>
+          (Step 1 - 線上建立成員列表)
+        </button>
+      </div><hr>
+      <div v-if="!ShowBTN">
+        <h2>Step 2: To generate a member list of project team</h2>
+        <div id="mblist">
+          <form v-on:submit.prevent="addMember">
+            <p>
+              What is your name? 
+              <input type="text" required v-model="mbName" placeholder="member name..">
+            </p>
+            <p>
+              What is your student ID of NYCU?
+              <input type="number" required v-model="mbID" placeholder="member student ID..">
+            </p>
+            <p>
+              What is your email address?
+              <input type="text" required v-model="mbEmail" placeholder="member email..">
+            </p>
+            <button type="submit">Add member</button>
+            <button type="button" v-on:click="reset">Reset</button>
+          </form>
+        
+          <p>
+            <strong>Member list of project team</strong>
+          </p>
+          <ul>
+            <li v-for="mb in mbList">{{mb.name}}, {{mb.ID}}, {{mb.email}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          ShowBTN: true,
+          mbName: null,
+          mbID: null,
+          mbEmail: null,
+          mbList: [
+            {name: '黃柏竣', ID: '110550123', email: 'rayhuang.cs10@nycu.edu.tw'}
+          ]
+        }
+      },
+      methods: {
+        addMember(){
+          let mb = {
+            name: this.mbName,
+            ID: this.mbID,
+            email: this.mbEmail
+          }
+          this.mbList.push(mb)
+          this.mbName = null
+          this.mbID = null
+          this.mbEmail = null
+        },
+        reset(){
+          this.mbName = null
+          this.mbID = null
+          this.mbEmail = null
+        }
+      }
+    })
+    app.mount('#page')
+  </script>
+</body>
+</html>
